@@ -8,10 +8,13 @@ lightIcon.addEventListener('click', () => {
 });
 let charCounter = 0;
 let wordCounter = 0;
-let sentenceCounter = 0;function textAreaOnInput() {
+let sentenceCounter = 0; function textAreaOnInput() {
     const textAreaFiled = document.getElementById('text-area');
     const ExcludeSpcaces = document.getElementById('ExcludeSpcaces').checked;
-    const CharacterLimit = document.getElementById('CharacterLimit').checked;
+    const characterLimit = document.getElementById('CharacterLimit').checked;
+    const charLimitValue = parseInt(document.getElementById('char-limit-value').value) || 0;
+    
+    const warning = document.getElementById('limit-warning');
 
     const textValue = textAreaFiled.value;
 
@@ -20,6 +23,7 @@ let sentenceCounter = 0;function textAreaOnInput() {
     const totalsen = document.getElementById('senctence-count');
 
     let stats;
+    
     if (ExcludeSpcaces) {
         stats = countExcludeSpcaces(textValue);
     } else {
@@ -31,11 +35,22 @@ let sentenceCounter = 0;function textAreaOnInput() {
             charCounter: textValue.length
         };
     }
-
     totalchar.textContent = stats.charCounter;
     totalword.textContent = stats.wordCounter;
     totalsen.textContent = stats.sentenceCounter;
 
+    if(characterLimit && charLimitValue > 0){
+        if (stats.charCounter > charLimitValue) {
+            warning.textContent = `over limit by ${stats.charCounter - charLimitValue}`;
+            warning.style.color = 'red';
+        } else {
+            warning.textContent = '';
+        }
+    } else {
+        warning.textContent = '';
+
+    }
+       
     
 }
 
