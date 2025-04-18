@@ -8,24 +8,44 @@ lightIcon.addEventListener('click', () => {
 });
 let charCounter = 0;
 let wordCounter = 0;
-let sentenceCounter = 0;
-function textAreaOnInput() {
+let sentenceCounter = 0;function textAreaOnInput() {
     const textAreaFiled = document.getElementById('text-area');
+    const ExcludeSpcaces = document.getElementById('ExcludeSpcaces').checked;
+    const CharacterLimit = document.getElementById('CharacterLimit').checked;
+
     const textValue = textAreaFiled.value;
 
-    charCounter = textValue.length;
-    const nOfWord = textValue.split(" ").filter(w => w !== '');
-    const nOfSen = textValue.split(". ").filter(w => w !== '');
-    wordCounter = nOfWord.length;
-    sentenceCounter = nOfSen.length;
-    console.log(`Characters: ${charCounter}`);
-    console.log(`Words: ${wordCounter}`);
-    console.log(`Sentences: ${sentenceCounter}`);
-    totalchar = document.getElementById('total-char');
-    totalword = document.getElementById('word-count');
-    totalsen = document.getElementById('senctence-count');
-    totalchar.textContent = charCounter;
-    totalword.textContent = wordCounter;
-    totalsen.textContent = sentenceCounter;
+    const totalchar = document.getElementById('total-char');
+    const totalword = document.getElementById('word-count');
+    const totalsen = document.getElementById('senctence-count');
+
+    let stats;
+    if (ExcludeSpcaces) {
+        stats = countExcludeSpcaces(textValue);
+    } else {
+        const nOfWord = textValue.split(/\s+/).filter(w => w !== '');
+        const nOfSen = textValue.split(/[.!?]+/).filter(w => w.trim() !== '');
+        stats = {
+            wordCounter: nOfWord.length,
+            sentenceCounter: nOfSen.length,
+            charCounter: textValue.length
+        };
+    }
+
+    totalchar.textContent = stats.charCounter;
+    totalword.textContent = stats.wordCounter;
+    totalsen.textContent = stats.sentenceCounter;
+
+    
 }
 
+function countExcludeSpcaces(textValue) {
+    const noSpaces = textValue.replace(/\s+/g, "");
+    const charCounter = noSpaces.length;
+    const nOfWord = textValue.split(/\s+/).filter(w => w !== '');
+    const nOfSen = textValue.split(/[.!?]+/).filter(w => w.trim() !== '');
+    const wordCounter = nOfWord.length;
+    const sentenceCounter = nOfSen.length;
+
+    return { charCounter, wordCounter, sentenceCounter };
+}
