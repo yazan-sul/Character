@@ -13,21 +13,21 @@
 
 </head>
 
-<body>
+<body class="darkMode">
   <header>
-    <h1><strong>Character Counter</strong></h1>
+    <h1 id="Character-counter"><strong>Character Counter</strong></h1>
     <img class="header-img" src="img/lightmode.png" alt="Light/dark mode toggle">
   </header>
   
   <div class="container">
-    <h1>Analyze your text in real-time</h1>
-    <textarea class="text-area" placeholder="start typing here... (or paste your text)"></textarea>
+    <h1 id="analyze-text">Analyze your text in real-time</h1>
+    <textarea id="text-area" class="text-area" placeholder="start typing here... (or paste your text)"></textarea>
     <div class="checkbox-container">
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-      <label for="vehicle1"> I have a bike</label><br>
+      <input type="checkbox" id="ExcludeSpcaces" name="ExcludeSpcaces">
+      <label for="ExcludeSpcaces"> Exclude Spcaces</label><br>
 
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-      <label for="vehicle1"> I have a bike</label><br>
+      <input type="checkbox" id="CharacterLimit" name="CharacterLimit">
+      <label for="CharacterLimit"> Set Character Limit</label><br>
     </div>
     <div class="cards-container">
       <div class="total-card">
