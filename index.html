@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Counter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css?v=1.0">
+  <link rel="icon" href="img/favicon.ico" sizes="any" />
+
+</head>
+
+<body>
+  <header>
+    <h1><strong>Character Counter</strong></h1>
+    <img class=".header-img" src="img/lightmode.png" alt="light mode icon">
+  </header>
+  <div class="container">
+    <h1>Analyze your text in real-time</h1>
+    <textarea class="text-area" placeholder="start typing here... (or paste your text)"></textarea>
+    <div class="checkbox-container">
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> I have a bike</label><br>
+
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> I have a bike</label><br>
+    </div>
+    <div class="cards-container">
+      <div class="total-card">
+        <h3 id="total-char">00</h3>
+        <label for="total-char">Total Characters</label>
+      </div>
+      <div class="word-card">
+        <h3 id="word-count">00</h3>
+        <label for="word-count">Word Count</label>
+      </div>
+      <div class="senctence-card">
+        <h3 id="senctence-count">00</h3>
+        <label for="senctence-count">Senctence Count</label>
+      </div>
+      
+    </div>
+    <div>
+      <h2>Letter Deinsty</h2>
+      <label>Senctence Count</label>
+    </div>
+  </div>
+  <div class="credits" data-gfe-screenshot-exclude="true">
+    <a href="https://www.greatfrontend.com/projects/u/username" target="_blank"> Built by Yazan Sulaiman</a>.
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
