@@ -1,14 +1,15 @@
-const lightIcon = document.querySelector('.header-img');
+const themetoggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-lightIcon.addEventListener('click', () => {
+themetoggle.addEventListener('click', () => {
     const isDark = body.classList.toggle('darkMode');
-
-    lightIcon.src = isDark ? 'img/lightmode.png' : 'img/darkMode.png';
+    
+    // lightIcon.src = isDark ? 'img/lightmode.png' : 'img/darkMode.png';
 });
 let charCounter = 0;
 let wordCounter = 0;
-let sentenceCounter = 0; function textAreaOnInput() {
+let sentenceCounter = 0;
+function textAreaOnInput() {
     const textAreaFiled = document.getElementById('text-area');
     const ExcludeSpcaces = document.getElementById('ExcludeSpcaces').checked;
     const characterLimit = document.getElementById('CharacterLimit').checked;
