@@ -80,7 +80,7 @@ header {
 
 .darkMode .text-area {
   background: var(--text-area);
-  
+
 }
 
 .checkbox-container {
@@ -115,40 +115,40 @@ input[type="checkbox"]:checked {
 }
 
 .total-card {
-  color: #000;
   font-size: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(174, 55, 55, 0.1);
   padding: 10px 12px;
-  background-color: #bf8b30;
+  background-color: #4a90e2;
+  color: #ffffff; 
   margin: 8px 0;
   min-width: 400px;
   max-height: 250px;
 }
 
 .senctence-card {
-  color: #000;
   font-size: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(174, 55, 55, 0.1);
   padding: 10px 12px;
-  background-color: #3070bf;
+  background-color: #50e3c2;
+  color: #1a1a1a;
   margin: 8px 0;
   min-width: 400px;
   max-height: 250px;
 }
 
 .word-card {
-  color: #000;
   font-size: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(174, 55, 55, 0.1);
   padding: 10px 12px;
-  background-color: #a5bf30;
-  margin: 8px 0;
+  background-color: #f5a623;   
+  color: #1a1a1a; 
+   margin: 8px 0;
   min-width: 400px;
   max-height: 250px;
 }
