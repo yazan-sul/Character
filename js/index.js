@@ -10,14 +10,14 @@ let charCounter = 0;
 let wordCounter = 0;
 let sentenceCounter = 0;
 function textAreaOnInput() {
-    const textAreaFiled = document.getElementById('text-area');
+    const textAreaField = document.getElementById('text-area');
     const ExcludeSpcaces = document.getElementById('ExcludeSpcaces').checked;
     const characterLimit = document.getElementById('CharacterLimit').checked;
     const charLimitValue = parseInt(document.getElementById('char-limit-value').value) || 0;
     
     const warning = document.getElementById('limit-warning');
 
-    const textValue = textAreaFiled.value;
+    const textValue = textAreaField.value;
 
     const totalchar = document.getElementById('total-char');
     const totalword = document.getElementById('word-count');
@@ -26,7 +26,7 @@ function textAreaOnInput() {
     let stats;
     
     if (ExcludeSpcaces) {
-        stats = countExcludeSpcaces(textValue);
+        stats = countExcludeSpaces(textValue);
     } else {
         const nOfWord = textValue.split(/\s+/).filter(w => w !== '');
         const nOfSen = textValue.split(/[.!?]+/).filter(w => w.trim() !== '');
@@ -55,7 +55,7 @@ function textAreaOnInput() {
     
 }
 
-function countExcludeSpcaces(textValue) {
+function countExcludeSpaces(textValue) {
     const noSpaces = textValue.replace(/\s+/g, "");
     const charCounter = noSpaces.length;
     const nOfWord = textValue.split(/\s+/).filter(w => w !== '');

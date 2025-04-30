@@ -136,44 +136,29 @@ input[type="checkbox"]:checked {
   justify-content: center;
   
 }
-
-.total-card {
+.total-card, .senctence-card, .word-card {
   font-size: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(174, 55, 55, 0.1);
   padding: 10px 12px;
-  background-color: #4a90e2;
-  color: #ffffff; 
   margin: 8px 0;
   min-width: 400px;
   max-height: 250px;
+}
+.total-card {
+  background-color: #4a90e2;
+  color: #ffffff; 
 }
 
 .senctence-card {
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(174, 55, 55, 0.1);
-  padding: 10px 12px;
   background-color: #50e3c2;
   color: #1a1a1a;
-  margin: 8px 0;
-  min-width: 400px;
-  max-height: 250px;
 }
 
 .word-card {
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(174, 55, 55, 0.1);
-  padding: 10px 12px;
   background-color: #f5a623;   
   color: #1a1a1a; 
-   margin: 8px 0;
-  min-width: 400px;
-  max-height: 250px;
 }
 
 .credits {
@@ -186,6 +171,6 @@ input[type="checkbox"]:checked {
 }
 
 .credits a {
-  color: #000;
+  color: #ff1616;
   font-weight: bold;
 }
