@@ -28,13 +28,7 @@ function textAreaOnInput() {
     if (ExcludeSpcaces) {
         stats = countExcludeSpaces(textValue);
     } else {
-        const nOfWord = textValue.split(/\s+/).filter(w => w !== '');
-        const nOfSen = textValue.split(/[.!?]+/).filter(w => w.trim() !== '');
-        stats = {
-            wordCounter: nOfWord.length,
-            sentenceCounter: nOfSen.length,
-            charCounter: textValue.length
-        };
+        stats = countIncludingSpaces(textValue);
     }
     totalchar.textContent = stats.charCounter;
     totalword.textContent = stats.wordCounter;
@@ -54,7 +48,15 @@ function textAreaOnInput() {
        
     
 }
-
+function countIncludingSpaces(textValue) {
+    const nOfWord = textValue.split(/\s+/).filter(w => w !== '');
+    const nOfSen = textValue.split(/[.!?]+/).filter(w => w.trim() !== '');
+    return {
+        wordCounter: nOfWord.length,
+        sentenceCounter: nOfSen.length,
+        charCounter: textValue.length
+    };
+}
 function countExcludeSpaces(textValue) {
     const noSpaces = textValue.replace(/\s+/g, "");
     const charCounter = noSpaces.length;
